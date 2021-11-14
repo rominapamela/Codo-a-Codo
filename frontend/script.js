@@ -1,6 +1,8 @@
 function myFunction()  
 {  
     var cantidad = document.getElementById("cantidad");
+    var nombre = document.getElementById("nombre");
+    alert("nombre: "+nombre.toString());
     var categoria = document.getElementById("categoria");
     var total;
 
