@@ -6,7 +6,6 @@
 package database;
 
 import config.DBConnection;
-import static java.lang.Math.log;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -57,13 +56,14 @@ public class UserDAO {
         resultSt = preparedSt.executeQuery();
 
         if(resultSt.next()) {
+            int iduser = resultSt.getInt("id");
             String username = resultSt.getString("username");
             String password = resultSt.getString("password");
             String name = resultSt.getString("name");
             String lastname = resultSt.getString("lastname");
             String email = resultSt.getString("email");
 
-            user = new User(username, password, name, lastname, email);
+            user = new User(iduser, username, password, name, lastname, email);
         }
 
         resultSt.close();
@@ -82,13 +82,14 @@ public class UserDAO {
         resultSt = preparedSt.executeQuery();
 
         if(resultSt.next()) {
+            int iduser = resultSt.getInt("iduser");
             String userName = resultSt.getString("username");
             String password = resultSt.getString("password");
             String name = resultSt.getString("name");
             String lastName = resultSt.getString("lastname");
             String email = resultSt.getString("email");
 
-            user = new User(userName, password, name, lastName, email);
+            user = new User(iduser, userName, password, name, lastName, email);
         }
 
         return user;
@@ -124,11 +125,7 @@ public class UserDAO {
                 return true;
             }catch(SQLException e){
                 return false;
-            }                 
-            //ps = connection.prepareStatement("SELECT * FROM user WHERE username = ?");
-            //ps.setString(1, username);
-            //rs = ps.executeQuery();          
-            //return rs.next();  
+            }                  
         }   
         else
         {

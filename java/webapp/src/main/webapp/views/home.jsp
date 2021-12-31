@@ -4,11 +4,16 @@
     Author     : rpv15
 --%>
 
+<%@page import="model.User"%>
 <%@include file="./partials/header.jsp"%>
 <%@include file="./partials/menu.jsp"%>
     
     <div class="container">
-        <h1 class="text-center">Bienvenido/a!</h1>
+        <h1 class="text-center">BIENVENIDO/A 
+        <%
+            out.println(" "+ user.getName() + " " + user.getLastname());
+        %>
+        !</h1>
         <img src="/imgs/user.png" class="rounded mx-auto d-block" width="800">
     </div>    
 

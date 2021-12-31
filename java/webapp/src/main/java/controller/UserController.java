@@ -5,16 +5,21 @@
  */
 package controller;
 
+import database.AccountDAO;
 import database.UserDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.Account;
+import model.User;
 
 /**
  *
@@ -39,14 +44,16 @@ public class UserController extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             String action = request.getPathInfo();            
             HttpSession session = request.getSession();            
-            UserDAO userDAO = new UserDAO();        
+            UserDAO userDAO = new UserDAO();  
+            
             switch (action) {
-                case "/login":           
+                case "/login":  
                     String userName = request.getParameter("username");
                     String pass = request.getParameter("password");
-
                     boolean login = userDAO.login(userName, pass);
-                    if (login) {                  
+                    if (login) {  
+                        User user = userDAO.getUserByUserName(userName);                        
+                        session.setAttribute("user", user);
                         response.sendRedirect("/views/home.jsp");
                     } else {
                         session.setAttribute("error", "errorLogin");
@@ -64,7 +71,9 @@ public class UserController extends HttpServlet {
                     boolean isCreated = newUser.createUser(userName, pass, name, lastname, email, repass);
                     
                     if (isCreated) {
-                         response.sendRedirect("/views/home.jsp");
+                        User user = userDAO.getUserByUserName(userName);                        
+                        session.setAttribute("user", user);
+                        response.sendRedirect("/views/home.jsp");
                     } else {
                         session.setAttribute("error", "errorRegister");
                         response.sendRedirect("/views/error.jsp");
@@ -77,8 +86,19 @@ public class UserController extends HttpServlet {
                 case "/profile":
                     response.sendRedirect("/views/profile.jsp");
                     break;
-                default: 
-                    
+                case "/accounts":
+
+                    AccountDAO accountDao = new AccountDAO();
+                    List<Account> accounts = new ArrayList<>();
+                    User user = (User) session.getAttribute("user");
+                    accounts = accountDao.getAccounts(user.getIduser());
+                    session.setAttribute("accounts", accounts);
+                    response.sendRedirect("/views/accounts.jsp");
+                    break;
+                case "/home":
+                    response.sendRedirect("/views/home.jsp");
+                    break;
+                default:                     
                     break;
             
             }
