@@ -18,8 +18,8 @@
         List<Account> accounts = (List<Account>) session.getAttribute("accounts");
         if (accounts.size()>0){
             for (int i=0 ; i < accounts.size(); i++){
-                out.print("<div class='card' style='width: 18rem;'>");
-                out.print("<div class='card-body'>");
+                out.println("<div class='card' style='width: 18rem; border-color: black; '>");
+                out.println("<div class='card-body' style='background-color:  #9ccdec ;' >");
                 
                 out.println("Account Number: " + accounts.get(i).getAccountNumber());
                 out.println("<br>");
@@ -29,11 +29,14 @@
                 out.println("<br>");
                 out.println("Currency: " + accounts.get(i).getCurrency());
                 out.println("<br><br>");
-                
-                out.print("<a href='#' class='btn btn-primary''>Ver movimientos</a>");
-                out.print("<div>");
-                out.print("<div>");
+                out.println("<a href='#' class='btn btn-primary''>Ver movimientos</a>");
+                out.println("<br>");
+                                
+                out.println("</div>");
+                out.println("</div>");
+                out.println("<br>");
             }
+                        
          }
         else{
             out.println("Empty list");
@@ -42,5 +45,7 @@
     %>
     
 </div>
+
+<br><br>
     
 <%@include file="./partials/footer.jsp"%>
