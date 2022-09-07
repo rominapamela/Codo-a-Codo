@@ -1,0 +1,62 @@
+@options
+@packages
+@argfile
+-classpath
+'C:/Users/rpv15/.m2/repository/javax/javaee-web-api/7.0/javaee-web-api-7.0.jar;C:/Users/rpv15/.m2/repository/mysql/mysql-connector-java/8.0.27/mysql-connector-java-8.0.27.jar;C:/Users/rpv15/.m2/repository/com/google/protobuf/protobuf-java/3.11.4/protobuf-java-3.11.4.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'D:/codo-a-codo/java/webapp/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'D:/codo-a-codo/java/webapp/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'webapp 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/7/docs/api' 'D:/codo-a-codo/java/webapp/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'webapp 1.0-SNAPSHOT API'
+config
+controller
+database
+model
+'D:/codo-a-codo/java/webapp/src/main/java/config/DBConnection.java'
+'D:/codo-a-codo/java/webapp/src/main/java/controller/UserController.java'
+'D:/codo-a-codo/java/webapp/src/main/java/database/AccountDAO.java'
+'D:/codo-a-codo/java/webapp/src/main/java/database/UserDAO.java'
+'D:/codo-a-codo/java/webapp/src/main/java/model/Account.java'
+'D:/codo-a-codo/java/webapp/src/main/java/model/User.java'
+C:\Users\rpv15\.m2\repository\javax\javaee-web-api\7.0\javaee-web-api-7.0.jar = 1640381895301
+C:\Users\rpv15\.m2\repository\mysql\mysql-connector-java\8.0.27\mysql-connector-java-8.0.27.jar = 1640487750822
+C:\Users\rpv15\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar = 1640487751016
+D:\codo-a-codo\java\webapp\src\main\java = 1640473346784
+D:\codo-a-codo\java\webapp\target\apidocs\allclasses-index.html = 1641244366433
+D:\codo-a-codo\java\webapp\target\apidocs\allclasses.html = 1641244366462
+D:\codo-a-codo\java\webapp\target\apidocs\allpackages-index.html = 1641244366438
+D:\codo-a-codo\java\webapp\target\apidocs\constant-values.html = 1641244366310
+D:\codo-a-codo\java\webapp\target\apidocs\deprecated-list.html = 1641244366450
+D:\codo-a-codo\java\webapp\target\apidocs\element-list = 1641244366248
+D:\codo-a-codo\java\webapp\target\apidocs\help-doc.html = 1641244366479
+D:\codo-a-codo\java\webapp\target\apidocs\index-all.html = 1641244366426
+D:\codo-a-codo\java\webapp\target\apidocs\index.html = 1641244366468
+D:\codo-a-codo\java\webapp\target\apidocs\member-search-index.js = 1641244366421
+D:\codo-a-codo\java\webapp\target\apidocs\member-search-index.zip = 1641244366424
+D:\codo-a-codo\java\webapp\target\apidocs\overview-summary.html = 1641244366471
+D:\codo-a-codo\java\webapp\target\apidocs\overview-tree.html = 1641244366384
+D:\codo-a-codo\java\webapp\target\apidocs\package-search-index.js = 1641244366414
+D:\codo-a-codo\java\webapp\target\apidocs\package-search-index.zip = 1641244366418
+D:\codo-a-codo\java\webapp\target\apidocs\script.js = 1641244366486
+D:\codo-a-codo\java\webapp\target\apidocs\search.js = 1641244366489
+D:\codo-a-codo\java\webapp\target\apidocs\serialized-form.html = 1641244366318
+D:\codo-a-codo\java\webapp\target\apidocs\stylesheet.css = 1641244366483
+D:\codo-a-codo\java\webapp\target\apidocs\type-search-index.js = 1641244366419
+D:\codo-a-codo\java\webapp\target\apidocs\type-search-index.zip = 1641244366420

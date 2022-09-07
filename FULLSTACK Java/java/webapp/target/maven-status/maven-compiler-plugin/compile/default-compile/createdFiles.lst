@@ -1,0 +1,4 @@
+config\DBConnection.class
+controller\UserController.class
+model\User.class
+database\UserDAO.class
